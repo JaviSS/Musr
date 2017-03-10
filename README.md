@@ -3,7 +3,7 @@
 
 TODO
 
-Diseño de la base de datos
-Diseño front
-Autenticacion de demas de usuarios
-Drag and drop (jqery?)
+1. Diseño de la base de datos
+2. Diseño front
+3. Autenticacion de demas de usuarios
+4. Drag and drop (jqery?)
