@@ -1,3 +1,6 @@
+
+
+
 * {
     color: #bbb;
 }
@@ -11,12 +14,17 @@ span {
     color: #333;
 }
 
-
 li {
     list-style: none;
 }
 
-.navbar#controls {
+#logo li img{
+    padding-left: 5px;
+    padding-top:20px ;
+    height:80px;
+}
+
+#mBar {
     height: 60px;
     min-height: 20px;
     background: #333;
@@ -25,14 +33,55 @@ li {
     padding: 3px ;
 }
 
-
-.navbar i{
-    color: #17ffad;
-    font-size: 50px;
-    margin: auto;
-
-    
+#separador{
+    width: 50%;
 }
+
+#mBar{
+    height: 100px;
+    padding: 0px;
+    border-radius: 0px;
+}
+
+#mBar i {
+    color: #ddd;
+    font-size: 25px;
+    line-height: 60px;
+    border: solid;
+    border-radius: 100%;
+    border-width: 2px;
+    border-color: #ddd;
+    margin:10px;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+
+
+}
+
+ul#controls{
+    padding: 0px;
+    margin: 0px;
+}
+
+#mBar li{
+display: inline
+}
+
+
+.navbar i#play{
+    color: #bbb;
+    font-size: 50px;
+    border-color: #ddd;
+    border-width: 2px;
+    border-color: #ddd;
+    margin:10px;
+    width: 80px;
+    height: 79px;
+    line-height: 80px;
+}
+
+
 
 #lBar ul{
 
@@ -55,6 +104,25 @@ li {
     background: #333 ;
 
 }
+
+
+
+#progessDiv{
+    background: #333;
+}
+
+.boton {
+    background: rgba(55, 255, 180, .6) none;
+    color: #222;
+    border-color: rgba(0, 0, 0, 0);
+    width: 100px;
+    text-shadow: none;
+    margin: auto;
+    padding:auto;
+    display: block;
+}
+
+
 
 b {
     color: #66ffbb;
@@ -116,7 +184,7 @@ img:hover {
     background: rgba(55, 255, 180, .6) none;
     color: #222;
     border-color: rgba(0, 0, 0, 0);
-    width: 30%;
+    width: 100px;
     text-shadow: none;
     margin: 0 auto;
     display: block;

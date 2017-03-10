@@ -16,20 +16,41 @@
 </head>
 
 <body>
-<nav class="navbar navbar-default" id="controls">
-    <div class="container-fluid">
-        <ul class="nav navbar-nav">
-            <!-- Logo -->
-            <li><i class="fa fa-podcast"></i></li>
-        </ul>
-        <form class="navbar-form navbar-left">
+
+<div class="navbar navbar-default" id="mBar">
+    <div class="row">
+        <div>
+            <ul class="col-md-4" id="logo">
+                <li><img src="img/logo.png"></li>
+            </ul>
+        </div>
+        <div>
             <!-- Controles de reproducion, irán centrados -->
-        </form>
-        <ul class="nav navbar-nav navbar-right">
-            <!-- boton de login/registro/salir -->
-        </ul>
+            <ul class="col-md-7" id="controls">
+                <li><i class="fa fa-repeat"></i></li>
+                <li><i class="fa fa-step-backward"></i></li>
+                <li><i class="fa fa-play" id="play"></i></li>
+                <li><i class="fa fa-step-forward"></i></li>
+                <li><i class="fa fa-random"></i></li>
+            </ul>
+        </div>
+        <div>
+            <ul class="nav navbar-nav col-md-1" id="login">
+                <input type="button" class="boton">
+            </ul>
+        </div>
     </div>
-</nav>
+    <div class="row" id="progessDiv">
+        <div class="col-md-1"></div>
+        <div class="col-md-1"><label id="">0:00</label></div>
+        <div class="col-md-8">
+            <progress value="22" max="100"></progress>
+        </div>
+        <div class="col-md-1"><label id="">3:45</label></div>
+        <div class="col-md-1"></div>
+
+    </div>
+</div>
 
 <!-- contenedor principal con la barra lateral + lista de reproducion/contenido-->
 <div class="col-md-12" id="mContainer">
