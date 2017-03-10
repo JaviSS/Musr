@@ -4,16 +4,57 @@
 
 body {
     background-size: 100%;
-    background: linear-gradient(to bottom, #333, #393939) no-repeat fixed;
+    background: linear-gradient(to bottom, #121212, #222) no-repeat fixed;
 }
 
 span {
-    color: #222;
+    color: #333;
 }
 
 
+li {
+    list-style: none;
+}
+
+.navbar#controls {
+    height: 60px;
+    min-height: 20px;
+    background: #333;
+    border:0px;
+    margin: 0px;
+    padding: 3px ;
+}
 
 
+.navbar i{
+    color: #17ffad;
+    font-size: 50px;
+    margin: auto;
+
+    
+}
+
+#lBar ul{
+
+    margin: 0;
+    padding:0;
+
+}
+
+#lBar i{
+    color: #8affac;
+    font-size: 40px;
+    text-align: left;
+    padding:10px;
+}
+
+
+#lBar{
+
+    height: 100%;
+    background: #333 ;
+
+}
 
 b {
     color: #66ffbb;
@@ -89,70 +130,10 @@ img:hover {
 
 }
 
-li {
-    list-style: none;
-}
 
-.navbar {
-    height: 40px;
-    min-height: 20px;
 
-}
 
-.navbar-default {
-    color: #FFF;
-}
 
-.navbar-default .navbar-nav > .active > a {
-    background: rgb(55, 255, 180);
-    border-radius: 5px;
-    height: 30px;
-    font-family: telegrafico;
-
-}
-
-.navbar-default .navbar-nav > li > a:hover {
-    background: rgba(55, 255, 180, .7);
-    border-radius: 5px;
-    height: 30px;
-    color: #222;
-    font-family: telegrafico;
-
-}
-
-.navbar-default .navbar-nav > li > a {
-    color: #FFF;
-    height: 30px;
-    line-height: 0px;
-}
-
-.navbar-default .navbar-nav > li > a:focus {
-    color: #EEE;
-    border-color: #66ffcc;
-    outline-color: #66ffcc;
-}
-
-nav li {
-    margin: 0px;
-    padding: 4px 2px 1px 2px;
-    font-family: telegrafico;
-
-}
-
-.nav li a {
-    font-size: 18px;
-    font-family: telegrafico;
-}
-
-nav li:focus {
-    outline: #66ffcc none 0px;
-    border-color: #66ffcc;
-}
-
-nav li:after {
-    outline-color: #66ffcc;
-    border-color: #66ffcc;
-}
 
 .form-control {
     background-color: #222;
