@@ -19,36 +19,33 @@
 
 <div class="navbar navbar-default" id="mBar">
     <div class="row">
-        <div>
-            <ul class="col-md-4" id="logo">
-                <li><img src="img/logo.png"></li>
-            </ul>
-        </div>
-        <div>
-            <!-- Controles de reproducion, irán centrados -->
-            <ul class="col-md-7" id="controls">
-                <li><i class="fa fa-repeat"></i></li>
-                <li><i class="fa fa-step-backward"></i></li>
-                <li><i class="fa fa-play" id="play"></i></li>
-                <li><i class="fa fa-step-forward"></i></li>
-                <li><i class="fa fa-random"></i></li>
-            </ul>
-        </div>
-        <div>
-            <ul class="nav navbar-nav col-md-1" id="login">
-                <input type="button" class="boton">
-            </ul>
-        </div>
-    </div>
-    <div class="row" id="progessDiv">
-        <div class="col-md-1"></div>
-        <div class="col-md-1"><label id="">0:00</label></div>
-        <div class="col-md-8">
-            <progress value="22" max="100"></progress>
-        </div>
-        <div class="col-md-1"><label id="">3:45</label></div>
-        <div class="col-md-1"></div>
+        <div class="col-md-10" id="logoControlesYprogreso">
+            <div class="row" id="logoYcontroles">
+                <ul class="col-md-4" id="logo">
+                    <li><img src="img/logoMorado.png"></li>
+                </ul>
+                <!-- Controles de reproducion, irán centrados -->
+                <ul class="col-md-8" id="controls">
+                    <li><i class="fa fa-repeat"></i></li>
+                    <li><i class="fa fa-step-backward"></i></li>
+                    <li><i class="fa fa-play" id="play"></i></li>
+                    <li><i class="fa fa-step-forward"></i></li>
+                    <li><i class="fa fa-random"></i></li>
+                </ul>
+            </div>
+            <div class="row" id="progessDiv">
+                <div class="col-md-1"></div>
+                <div class="col-md-1" id="progressTime"><label>1:02</label></div>
+                <div class="col-md-9">
+                    <progress value="22" max="100"></progress>
+                </div>
+                <div class="col-md-1" id="songLength"><label>3:45</label></div>
 
+            </div>
+        </div>
+        <div class="col-md-2" id="imgArtistadiv">
+            <img src="img/artista.jpg" id="imgArtista" class="pull-right">
+        </div>
     </div>
 </div>
 
@@ -65,10 +62,52 @@
             </ul>
         </div>
         <div class="col-md-11" id="playlistCont">
-            <table>
-                <th><td>Nombre</td><td>Artista</td><td>Álbum</td><td>Duración</td><td>...</td></th>
-                <div id="songList"></div>
-            </table>
+            <ul id="playList">
+                <li>
+                    <div class="row cabecera">
+                        <div class="col-md-1 col-xs-1"><strong></strong></div>
+                        <div class="col-md-1 col-xs-1"><strong>Favorita</strong></div>
+                        <div class="col-md-3 col-xs-3"><strong>Nombre</strong></div>
+                        <div class="col-md-2 col-xs-2">Artista</div>
+                        <div class="col-md-2 col-xs-2">Álbum</div>
+                        <div class="col-md-2 col-xs-2">Añadida</div>
+                        <div class="col-md-1 col-xs-1">Duración</div>
+                    </div>
+                </li>
+                <li class="fila0">
+                    <div class="row filaLista">
+                        <div class="col-md-1 col-xs-1 filaPlayBoton"><i class="fa fa-play-circle"></i></div>
+                        <div class="col-md-1 col-xs-1 filaFavBoton"><i class="fa fa-star-o"></i></div>
+                        <div class="col-md-3 col-xs-3 filaNombreCancion">skjdafnasjdfnasfjnasdfjsadkljfmo</div>
+                        <div class="col-md-2 col-xs-2 filaArtista">sfdsafdasfdasfasfasfsa</div>
+                        <div class="col-md-2 col-xs-2 filaÁlbum">fasdfdsafsafasfasf</div>
+                        <div class="col-md-2 col-xs-2 filaFechaAdd">2020 02 02 </div>
+                        <div class="col-md-1 col-xs-1 filaDuracion">3:34</div>
+                    </div>
+                </li>
+                <li class="fila1">
+                    <div class="row filaLista">
+                        <div class="col-md-1 col-xs-1 filaPlayBoton"><i class="fa fa-play-circle"></i></div>
+                        <div class="col-md-1 col-xs-1 filaFavBoton"><i class="fa fa-star-o"></i></div>
+                        <div class="col-md-3 col-xs-3 filaNombreCancion">skjdafnasjdfnasfjnasdfjsadkljfmo</div>
+                        <div class="col-md-2 col-xs-2 filaArtista">sfdsafdasfdasfasfasfsa</div>
+                        <div class="col-md-2 col-xs-2 filaÁlbum">fasdfdsafsafasfasf</div>
+                        <div class="col-md-2 col-xs-2 filaFechaAdd">2020 02 02 </div>
+                        <div class="col-md-1 col-xs-1 filaDuracion">3:34</div>
+                    </div>
+                </li>
+                <li class="fila0">
+                    <div class="row filaLista">
+                        <div class="col-md-1 col-xs-1 filaPlayBoton"><i class="fa fa-play-circle"></i></div>
+                        <div class="col-md-1 col-xs-1 filaFavBoton"><i class="fa fa-star-o"></i></div>
+                        <div class="col-md-3 col-xs-3 filaNombreCancion">skjdafnasjdfnasfjnasdfjsadkljfmo</div>
+                        <div class="col-md-2 col-xs-2 filaArtista">sfdsafdasfdasfasfasfsa</div>
+                        <div class="col-md-2 col-xs-2 filaÁlbum">fasdfdsafsafasfasf</div>
+                        <div class="col-md-2 col-xs-2 filaFechaAdd">2020 02 02 </div>
+                        <div class="col-md-1 col-xs-1 filaDuracion">3:34</div>
+                    </div>
+                </li>
+            </ul>
         </div>
     </div>
 

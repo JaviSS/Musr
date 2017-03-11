@@ -1,5 +1,18 @@
-
-
+/*Con estas variables se cambia del tiron los colores de la aplicación,
+el logo es un png y seguirá del mismo color */
+:root {
+    --principal: #d7bcff;
+    --secundario: #ddd;
+    --barras: #292929;
+    --fondoPrincipal: #111;
+    --fondoSecundario: #292929;
+    --reproductor: var(--principal);
+    --reproductorPlay: var(--principal);
+    --fila0:  #191919 ;
+    --fila0h: #42364b;
+    --fila1:  #111 ;
+    --fila1h: #42364B;
+}
 
 * {
     color: #bbb;
@@ -7,11 +20,11 @@
 
 body {
     background-size: 100%;
-    background: linear-gradient(to bottom, #121212, #222) no-repeat fixed;
+    background: linear-gradient(to bottom, var(--fondoPrincipal), var(--fondoPrincipal)) no-repeat fixed;
 }
 
 span {
-    color: #333;
+    color: var(--fondoSecundario);
 }
 
 li {
@@ -27,7 +40,7 @@ li {
 #mBar {
     height: 60px;
     min-height: 20px;
-    background: #333;
+    background: var(--fondoSecundario);
     border:0px;
     margin: 0px;
     padding: 3px ;
@@ -44,13 +57,12 @@ li {
 }
 
 #mBar i {
-    color: #ddd;
+    color: var(--reproductor);
     font-size: 25px;
     line-height: 60px;
-    border: solid;
     border-radius: 100%;
-    border-width: 2px;
-    border-color: #ddd;
+    border: 2px solid var(--reproductor);
+    background: var(--barras);
     margin:10px;
     width: 60px;
     height: 60px;
@@ -65,33 +77,51 @@ ul#controls{
 }
 
 #mBar li{
-display: inline
+    display: inline
 }
 
 
 .navbar i#play{
-    color: #bbb;
+    color: var(--reproductorPlay);
     font-size: 50px;
-    border-color: #ddd;
+    border-color: var(--reproductorPlay);
     border-width: 2px;
-    border-color: #ddd;
     margin:10px;
     width: 80px;
     height: 79px;
     line-height: 80px;
 }
 
+#logoControlesYprogreso{
+    padding-right: 0;
+}
+
+#logoYcontroles{
+    padding: 0;
+    margin: 0;
+}
+
+#imgArtistadiv{
+    padding-right: 0;
+    height: 123px;
+    background-color: var(--fondoSecundario);
+}
+
+#imgArtista{
+    height: 100%;
+    padding:0;
+    margin: 0;
+}
 
 
 #lBar ul{
-
     margin: 0;
     padding:0;
 
 }
 
 #lBar i{
-    color: #8affac;
+    color: var(--principal);
     font-size: 40px;
     text-align: left;
     padding:10px;
@@ -101,18 +131,52 @@ display: inline
 #lBar{
 
     height: 100%;
-    background: #333 ;
+    background: var(--barras);
 
 }
 
 
 
 #progessDiv{
-    background: #333;
+    background: var(--fondoSecundario);
 }
 
+#progressTime{
+    text-align: right;
+}
+
+progress[value] {
+    border-radius: 10px;
+    margin-top: 6px;
+    width: 100%;
+    height: 5px;
+    appearance: none;
+    -webkit-appearance: none;
+
+}
+progress{
+    background: linear-gradient(to right, var(--principal), #99ffcc);
+
+
+}
+progress::-webkit-progress-bar {
+    background: #444;
+    border-radius: 3px;
+
+}
+progress::-webkit-progress-value {
+    background: linear-gradient(to left , var(--principal), var(--principal));
+    border-radius: 3px;
+
+
+}
+progress::-moz-progress-bar {
+    background: #444;
+}
+
+
 .boton {
-    background: rgba(55, 255, 180, .6) none;
+    background: var(--principal) none;
     color: #222;
     border-color: rgba(0, 0, 0, 0);
     width: 100px;
@@ -122,6 +186,71 @@ display: inline
     display: block;
 }
 
+#playlistCont{
+    padding: 0;
+    margin: 0;
+}
+
+#playList{
+    padding: 0;
+    margin: 0;
+}
+
+.cabecera{
+    text-align: center;
+    padding-right: 5px;
+    height: 33px;
+    line-height: 33px;
+}
+
+.filaLista{
+    height: 38px;
+    line-height: 38px;
+    font-size: 11px;
+    text-align: center;
+}
+
+.fila0{
+    background-color: var(--fila0);
+    transition-duration: .25s;
+}
+
+.fila0:hover{
+    background-color: var(--fila0h);
+    opacity: 0.8;
+}
+
+.fila1{
+    background-color: var(--fila1);
+    transition-duration: .25s;
+}
+
+.fila1:hover{
+    background-color: var(--fila1h);
+    opacity: 0.8;
+
+}
+
+.filaPlayBoton{
+    font-size: 30px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    text-align: center;
+}
+
+.filafavboton{
+
+    font-size: 26px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    text-align: center;
+}
+
+.filaduracion{
+padding-right: 5px;
+}
+
+/*
 
 
 b {
@@ -286,3 +415,4 @@ img:hover {
     text-align: center;
 
 }
+*/
