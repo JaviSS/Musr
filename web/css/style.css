@@ -114,6 +114,11 @@ ul#controls{
 }
 
 
+#lBar label{
+    font-size: 10px;
+    line-height: 8px;
+}
+
 #lBar ul{
     margin: 0;
     padding:0;
@@ -124,7 +129,7 @@ ul#controls{
     color: var(--principal);
     font-size: 40px;
     text-align: left;
-    padding:10px;
+    padding: 10px 10px 0px;
 }
 
 
@@ -132,6 +137,7 @@ ul#controls{
 
     height: 100%;
     background: var(--barras);
+    text-align: center;
 
 }
 
