@@ -15,10 +15,10 @@
     <title>Musr</title>
 </head>
 
-<body>
+<body onload="init()">
 
 <div class="navbar navbar-default" id="mBar">
-    <div class="row">
+    <div class="row" id="mbarRow">
         <div class="col-md-10" id="logoControlesYprogreso">
             <div class="row" id="logoYcontroles">
                 <ul class="col-md-4" id="logo">
@@ -28,25 +28,30 @@
                 <ul class="col-md-8" id="controls">
                     <li><i class="fa fa-repeat"></i></li>
                     <li><i class="fa fa-step-backward"></i></li>
-                    <li><i class="fa fa-play" id="play"></i></li>
+                    <li><i class="fa fa-play" id="play" onclick="playM()"></i></li>
+                    <li><i class="fa fa-pause" id="pause" onclick="pauseM()" style="display: none"></i></li>
                     <li><i class="fa fa-step-forward"></i></li>
                     <li><i class="fa fa-random"></i></li>
                 </ul>
             </div>
             <div class="row" id="progessDiv">
                 <div class="col-md-1"></div>
-                <div class="col-md-1" id="progressTime"><label>1:02</label></div>
+                <div class="col-md-1 text-right"><label id="progressTime">1:02</label></div>
                 <div class="col-md-9">
-                    <progress value="22" max="100"></progress>
+                    <progress value="22" max="10000" id="progreso"></progress>
                 </div>
                 <div class="col-md-1" id="songLength"><label>3:45</label></div>
-
+            </div>
+            <div class="row" id="titCancionRepr">
+                <div class="col-md-2"></div>
+                <label id="titulo">***</label><label>-</label><label id="artista">***</label>
             </div>
         </div>
         <div class="col-md-2" id="imgArtistadiv">
             <img src="img/artista.jpg" id="imgArtista" class="pull-right">
         </div>
     </div>
+
 </div>
 
 <!-- contenedor principal con la barra lateral + lista de reproducion/contenido-->
@@ -63,28 +68,24 @@
             </ul>
         </div>
         <div class="col-md-11" id="playlistCont">
+            <div class="row cabecera">
+                <div class="col-md-1 col-xs-1"><strong></strong></div>
+                <div class="col-md-1 col-xs-1"><strong>Favorita</strong></div>
+                <div class="col-md-3 col-xs-3"><strong>Nombre</strong></div>
+                <div class="col-md-2 col-xs-2"><strong>Artista</strong></div>
+                <div class="col-md-2 col-xs-2"><strong>Álbum</strong></div>
+                <div class="col-md-2 col-xs-2"><strong>Añadida</strong></div>
+                <div class="col-md-1 col-xs-1"><strong>Duración</strong></div>
+            </div>
             <ul id="playList">
-                <li>
-                    <div class="row cabecera">
-                        <div class="col-md-1 col-xs-1"><strong></strong></div>
-                        <div class="col-md-1 col-xs-1"><strong>Favorita</strong></div>
-                        <div class="col-md-3 col-xs-3"><strong>Nombre</strong></div>
-                        <div class="col-md-2 col-xs-2">Artista</div>
-                        <div class="col-md-2 col-xs-2">Álbum</div>
-                        <div class="col-md-2 col-xs-2">Añadida</div>
-                        <div class="col-md-1 col-xs-1">Duración</div>
-                    </div>
-                </li>
-                <li class="fila0">
-                    <div class="row filaLista">
-                        <div class="col-md-1 col-xs-1 filaPlayBoton"><i class="fa fa-play-circle"></i></div>
-                        <div class="col-md-1 col-xs-1 filaFavBoton"><i class="fa fa-star-o"></i></div>
-                        <div class="col-md-3 col-xs-3 filaNombreCancion">skjdafnasjdfnasfjnasdfjsadkljfmo</div>
-                        <div class="col-md-2 col-xs-2 filaArtista">sfdsafdasfdasfasfasfsa</div>
-                        <div class="col-md-2 col-xs-2 filaÁlbum">fasdfdsafsafasfasf</div>
-                        <div class="col-md-2 col-xs-2 filaFechaAdd">2020 02 02 </div>
-                        <div class="col-md-1 col-xs-1 filaDuracion">3:34</div>
-                    </div>
+                <li class="fila0 row filaLista">
+                    <div class="col-md-1 col-xs-1 filaPlayBoton"><i class="fa fa-play-circle"></i></div>
+                    <div class="col-md-1 col-xs-1 filaFavBoton"><i class="fa fa-star-o"></i></div>
+                    <div class="col-md-3 col-xs-3 filaNombreCancion" idCancion="Delta Heavy - Kaleidoscope.mp3">Delta Heavy - Kaleidoscope.mp3</div>
+                    <div class="col-md-2 col-xs-2 filaArtista">Delta Heavy</div>
+                    <div class="col-md-2 col-xs-2 filaÁlbum">fasdfdsafsafasfasf</div>
+                    <div class="col-md-2 col-xs-2 filaFechaAdd">2020 02 02 </div>
+                    <div class="col-md-1 col-xs-1 filaDuracion">3:34</div>
                 </li>
                 <li class="fila1">
                     <div class="row filaLista">

@@ -1,5 +1,5 @@
 # Musr
-(8)
+*Music inspires us*
 
 #### TODO
 
@@ -20,3 +20,9 @@
 * Si soundhound o shazam tiene API sacar el nombre la canción de ahí y si no fiarse del usuario
 * Atributo género para las canciones?
 
+
+
+
+#### PROBLEMAS
+
+* La duración total de objeto de js `Audio` devuelve `infinity` en safari lo que hace no funcione la barra de progreso
