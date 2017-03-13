@@ -1,17 +1,20 @@
 /*Con estas variables se cambia del tiron los colores de la aplicación,
 el logo es un png y seguirá del mismo color */
 :root {
-    --principal: #d7bcff;
+    --principal: #fe8291;
     --secundario: #ddd;
     --barras: #292929;
     --fondoPrincipal: #111;
     --fondoSecundario: #292929;
     --reproductor: var(--principal);
+    --botonActivo: var(--secundario);
     --reproductorPlay: var(--principal);
     --fila0:  #191919 ;
-    --fila0h: #42364b;
+    --fila0h: #4b2c35;
     --fila1:  #111 ;
-    --fila1h: #42364B;
+    --fila1h: #4b2e3a;
+    --active: #674851;
+
 }
 
 * {
@@ -66,22 +69,27 @@ li {
     border-radius: 0px;
 }
 
-#mBar i {
+#controles i {
     color: var(--reproductor);
     font-size: 25px;
     line-height: 60px;
     border-radius: 100%;
     border: 2px solid var(--reproductor);
-    background: var(--barras);
+    background: var(--fila0);
     margin:10px;
     width: 60px;
     height: 60px;
     text-align: center;
 
+}
+#controles i:hover {
+    color: var(--secundario);
+    font-size: 28px;
+    border: 2px solid var(--secundario);
 
 }
 
-ul#controls{
+ul#controles{
     padding: 0px;
     margin: 0px;
 }
@@ -90,6 +98,9 @@ ul#controls{
     display: inline
 }
 
+#controles .botonActivo{
+    color: var(--botonActivo);
+}
 
 .navbar i#play, .navbar i#pause{
     color: var(--reproductorPlay);
@@ -101,6 +112,58 @@ ul#controls{
     height: 79px;
     line-height: 80px;
 }
+
+.navbar i#play:hover, .navbar i#pause:hover{
+    color: var(--secundario);
+    border-color: var(--secundario);
+}
+
+
+#volumenDiv{
+    padding: 0;
+    margin-top: 5%;
+}
+
+#volumenIco{
+
+    color: var(--principal);
+    font-size: 18px;
+
+}
+
+#volumen[value] {
+    border-radius: 10px;
+    width: 85%;
+    height: 5px;
+    appearance: none;
+    -webkit-appearance: none;
+
+
+}
+#volumen{
+    padding: 0;
+    margin-top: 7px;
+
+
+}
+#volumen::-webkit-progress-bar {
+    background: #444;
+    border-radius: 3px;
+
+}
+
+#volumen::-webkit-progress-value {
+    background: linear-gradient(to right, var(--fondoSecundario), var(--principal));
+    border-radius: 3px;
+
+
+}
+#volumen::-moz-progress-bar {
+    background: #444;
+}
+
+
+
 
 #logoControlesYprogreso{
     padding-right: 0;
@@ -165,7 +228,7 @@ ul#controls{
     text-align: right;
 }
 
-progress[value] {
+#barraProgreso[value] {
     border-radius: 10px;
     margin-top: 6px;
     width: 100%;
@@ -174,23 +237,23 @@ progress[value] {
     -webkit-appearance: none;
 
 }
-progress{
-    background: linear-gradient(to right, var(--principal), #99ffcc);
+#barraProgreso{
+    background: var(--principal);
 
 
 }
-progress::-webkit-progress-bar {
+#barraProgreso::-webkit-progress-bar {
     background: #444;
     border-radius: 3px;
 
 }
-progress::-webkit-progress-value {
-    background: linear-gradient(to left , var(--principal), var(--principal));
+#barraProgreso::-webkit-progress-value {
+    background: var(--principal);
     border-radius: 3px;
 
 
 }
-progress::-moz-progress-bar {
+#barraProgreso::-moz-progress-bar {
     background: #444;
 }
 
@@ -223,11 +286,16 @@ progress::-moz-progress-bar {
     line-height: 33px;
 }
 
-.filaLista{
+.filaLista {
     height: 38px;
     line-height: 38px;
     font-size: 11px;
     text-align: center;
+}
+
+.filaLista.active{
+    background: var(--active);
+
 }
 
 .fila0{

@@ -21,30 +21,36 @@
     <div class="row" id="mbarRow">
         <div class="col-md-10" id="logoControlesYprogreso">
             <div class="row" id="logoYcontroles">
-                <ul class="col-md-4" id="logo">
-                    <li><img src="img/logoMorado.png"></li>
+                <ul class="col-md-3" id="logo">
+                    <li><img src="img/logoRojo.png"></li>
                 </ul>
+                <ul class="col-md-1"></ul>
                 <!-- Controles de reproducion, irán centrados -->
-                <ul class="col-md-8" id="controls">
-                    <li><i class="fa fa-repeat"></i></li>
-                    <li><i class="fa fa-step-backward"></i></li>
+                <ul class="col-md-6" id="controles">
+                    <li><i class="fa fa-repeat" id="repetir" onclick="repetir()"></i></li>
+                    <li><i class="fa fa-step-backward" id="anterior" onclick="anterior()" ></i></li>
                     <li><i class="fa fa-play" id="play" onclick="playM()"></i></li>
                     <li><i class="fa fa-pause" id="pause" onclick="pauseM()" style="display: none"></i></li>
-                    <li><i class="fa fa-step-forward"></i></li>
+                    <li><i class="fa fa-step-forward" id="siguiente" onclick="siguiente()"></i></li>
                     <li><i class="fa fa-random"></i></li>
                 </ul>
+                <div class="col-md-2" id="volumenDiv">
+                    <i class="fa fa-volume-up" id="volumenIco"></i>
+                    <progress value="10" min="0" max="100" id="volumen" class="pull-right"></progress>
+
+                </div>
             </div>
             <div class="row" id="progessDiv">
                 <div class="col-md-1"></div>
                 <div class="col-md-1 text-right"><label id="progressTime">1:02</label></div>
                 <div class="col-md-9">
-                    <progress value="22" max="10000" id="progreso"></progress>
+                    <progress value="0" max="2000" id="barraProgreso"></progress>
                 </div>
-                <div class="col-md-1" id="songLength"><label>3:45</label></div>
+                <div class="col-md-1" id="songLength"><label id="duracion">*:**</label></div>
             </div>
             <div class="row" id="titCancionRepr">
                 <div class="col-md-2"></div>
-                <label id="titulo">***</label><label>-</label><label id="artista">***</label>
+                <label id="titulo">***</label><label>&nbsp;-&nbsp;</label><label id="artista">***</label>
             </div>
         </div>
         <div class="col-md-2" id="imgArtistadiv">
@@ -60,11 +66,11 @@
         <!-- barra lateral -->
         <div class="col-md-1" id="lBar">
             <ul>
-                <li><i class="fa fa-list-ul"></i><label>Listas</label></li>
-                <li><i class="fa fa-users"></i><label>Amigos</label></li>
-                <li><i class="fa fa-cog"></i><label>Opciones</label></li>
-                <li><i class="fa fa-star"></i><label>Favoritas</label></li>
-                <li><i class="fa fa-upload"></i><label>Subir</label></li>
+                <li><i class="fa fa-list-ul"></i><br><label>Listas</label></li>
+                <li><i class="fa fa-users"></i><br><label>Amigos</label></li>
+                <li><i class="fa fa-cog"></i><br><label>Opciones</label></li>
+                <li><i class="fa fa-star"></i><br><label>Favoritas</label></li>
+                <li><i class="fa fa-upload"></i><br><label>Subir</label></li>
             </ul>
         </div>
         <div class="col-md-11" id="playlistCont">
@@ -81,38 +87,42 @@
                 <li class="fila0 row filaLista">
                     <div class="col-md-1 col-xs-1 filaPlayBoton"><i class="fa fa-play-circle"></i></div>
                     <div class="col-md-1 col-xs-1 filaFavBoton"><i class="fa fa-star-o"></i></div>
-                    <div class="col-md-3 col-xs-3 filaNombreCancion" idCancion="Delta Heavy - Kaleidoscope.mp3">Delta Heavy - Kaleidoscope.mp3</div>
+                    <div class="col-md-3 col-xs-3 filaNombreCancion" idCancion="a.mp3">Kaleidoscope</div>
                     <div class="col-md-2 col-xs-2 filaArtista">Delta Heavy</div>
                     <div class="col-md-2 col-xs-2 filaÁlbum">fasdfdsafsafasfasf</div>
                     <div class="col-md-2 col-xs-2 filaFechaAdd">2020 02 02 </div>
                     <div class="col-md-1 col-xs-1 filaDuracion">3:34</div>
                 </li>
-                <li class="fila1">
-                    <div class="row filaLista">
-                        <div class="col-md-1 col-xs-1 filaPlayBoton"><i class="fa fa-play-circle"></i></div>
-                        <div class="col-md-1 col-xs-1 filaFavBoton"><i class="fa fa-star-o"></i></div>
-                        <div class="col-md-3 col-xs-3 filaNombreCancion">skjdafnasjdfnasfjnasdfjsadkljfmo</div>
-                        <div class="col-md-2 col-xs-2 filaArtista">sfdsafdasfdasfasfasfsa</div>
-                        <div class="col-md-2 col-xs-2 filaÁlbum">fasdfdsafsafasfasf</div>
-                        <div class="col-md-2 col-xs-2 filaFechaAdd">2020 02 02 </div>
-                        <div class="col-md-1 col-xs-1 filaDuracion">3:34</div>
-                    </div>
+                <li class="fila1 row filaLista">
+                    <div class="col-md-1 col-xs-1 filaPlayBoton"><i class="fa fa-play-circle"></i></div>
+                    <div class="col-md-1 col-xs-1 filaFavBoton"><i class="fa fa-star-o"></i></div>
+                    <div class="col-md-3 col-xs-3 filaNombreCancion" idCancion="b.mp3">Automaton</div>
+                    <div class="col-md-2 col-xs-2 filaArtista">Robotaki</div>
+                    <div class="col-md-2 col-xs-2 filaÁlbum">fasdfdsafsafasfasf</div>
+                    <div class="col-md-2 col-xs-2 filaFechaAdd">2020 02 02 </div>
+                    <div class="col-md-1 col-xs-1 filaDuracion">3:34</div>
                 </li>
-                <li class="fila0">
-                    <div class="row filaLista">
-                        <div class="col-md-1 col-xs-1 filaPlayBoton"><i class="fa fa-play-circle"></i></div>
-                        <div class="col-md-1 col-xs-1 filaFavBoton"><i class="fa fa-star-o"></i></div>
-                        <div class="col-md-3 col-xs-3 filaNombreCancion">skjdafnasjdfnasfjnasdfjsadkljfmo</div>
-                        <div class="col-md-2 col-xs-2 filaArtista">sfdsafdasfdasfasfasfsa</div>
-                        <div class="col-md-2 col-xs-2 filaÁlbum">fasdfdsafsafasfasf</div>
-                        <div class="col-md-2 col-xs-2 filaFechaAdd">2020 02 02 </div>
-                        <div class="col-md-1 col-xs-1 filaDuracion">3:34</div>
-                    </div>
+                <li class="fila0 row filaLista">
+                    <div class="col-md-1 col-xs-1 filaPlayBoton"><i class="fa fa-play-circle"></i></div>
+                    <div class="col-md-1 col-xs-1 filaFavBoton"><i class="fa fa-star-o"></i></div>
+                    <div class="col-md-3 col-xs-3 filaNombreCancion" idcancion="c.mp3">White Flag</div>
+                    <div class="col-md-2 col-xs-2 filaArtista">Delta heavy</div>
+                    <div class="col-md-2 col-xs-2 filaÁlbum">fasdfdsafsafasfasf</div>
+                    <div class="col-md-2 col-xs-2 filaFechaAdd">2020 02 02 </div>
+                    <div class="col-md-1 col-xs-1 filaDuracion">3:34</div>
                 </li>
+                <li class="fila1 row filaLista">
+                <div class="col-md-1 col-xs-1 filaPlayBoton"><i class="fa fa-play-circle"></i></div>
+                <div class="col-md-1 col-xs-1 filaFavBoton"><i class="fa fa-star-o"></i></div>
+                <div class="col-md-3 col-xs-3 filaNombreCancion" idcancion="d.mp3">Lose yourself</div>
+                <div class="col-md-2 col-xs-2 filaArtista">Eminem</div>
+                <div class="col-md-2 col-xs-2 filaÁlbum">fasdfdsafsafasfasf</div>
+                <div class="col-md-2 col-xs-2 filaFechaAdd">2020 02 02 </div>
+                <div class="col-md-1 col-xs-1 filaDuracion">3:34</div>
+            </li>
             </ul>
         </div>
     </div>
-
 </div>
 
 </body>
