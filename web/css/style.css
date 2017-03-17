@@ -1,7 +1,7 @@
 /*Con estas variables se cambia del tiron los colores de la aplicación,
 el logo es un png y seguirá del mismo color */
 :root {
-    --principal: #fe8291;
+    --principal: #51fe7a;
     --secundario: #ddd;
     --barras: #292929;
     --fondoPrincipal: #111;
@@ -127,6 +127,13 @@ ul#controles{
 #volumenIco{
 
     color: var(--principal);
+    font-size: 18px;
+
+}
+
+#volumenIco:hover{
+
+    color: var(--secundario);
     font-size: 18px;
 
 }
@@ -334,8 +341,21 @@ ul#controles{
 }
 
 .filaduracion{
-padding-right: 5px;
+    padding-right: 5px;
 }
+
+.mostrar{
+    visibility: visible;
+
+}
+
+.ocultar{
+
+    visibility: hidden;
+}
+
+
+
 
 /*
 

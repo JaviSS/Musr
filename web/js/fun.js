@@ -13,8 +13,8 @@ function init() {
 function initAudio(element){
     var song = element.children()[2].attributes[1].value;
     var title = element.children()[2].innerHTML;
-    var cover = element.attr('cover');
     var artist = element.children()[3].innerHTML;
+    var cover = element.attr('cover');
 
 
     audio = new Audio("../media/"+song);
@@ -32,6 +32,13 @@ function initAudio(element){
     element.addClass('active');
 
     audio.volume = volume;
+
+    var seg = parseInt(audio.currentTime % 60);
+    var min = parseInt((audio.currentTime / 60) % 60);
+
+    if (seg < 10)  seg = '0' + seg;
+    $('#duracion').html(min + ':' + seg);
+
     audio.addEventListener('ended',siguiente);
 
 }
@@ -68,9 +75,6 @@ function calcularProgreso(){
         if (seg < 10)  seg = '0' + seg;
         $('#progressTime').html(min + ':' + seg);
 
-        if (segT < 10)  segT = '0' + segT;
-        $('#duracion').html(minT + ':' + segT);
-
         var value = 0;
 
         //2000 viene del atributo max de la barra de progreso en HTML
@@ -98,6 +102,23 @@ $('#volumen').addEventListener('click', function (e) {
 
 });
 */
+
+function volumenOnOff() {
+
+    var volumenIco = $('#volumenIco');
+    var volumenClass = volumenIco.findClass("fa-volume-up");
+
+    if (volumenIco.className == "fa-volume-up"){
+        volumenIco.removeClass("fa-volume-up");
+        volumenIco.addClass("fa-volume-off");
+        audio.volume = 0;
+    } else{
+        volumenIco.removeClass("fa-volume-off");
+        volumenIco.addClass("fa-volume-up");
+        audio.volume=volume;
+    }
+
+}
 
 function siguiente() {
 
@@ -142,6 +163,26 @@ function repetir() {
     else $('#repetir').removeClass('botonActivo');
 
 }
+
+
+//Diseño e UI
+
+function pintarPLay(element) {
+    var xxx = element.firstChild;
+}
+
+function ocultarPlay(element) {
+    //element.firstChild.hide();
+}
+
+
+function actualizarImagenArtista() {
+
+    $('#imgArtista').attr()
+
+}
+
+
 
 function post0(servlet) {
 

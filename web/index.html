@@ -22,7 +22,7 @@
         <div class="col-md-10" id="logoControlesYprogreso">
             <div class="row" id="logoYcontroles">
                 <ul class="col-md-3" id="logo">
-                    <li><img src="img/logoRojo.png"></li>
+                    <li><img src="img/logoVerde.png"></li>
                 </ul>
                 <ul class="col-md-1"></ul>
                 <!-- Controles de reproducion, irán centrados -->
@@ -35,26 +35,26 @@
                     <li><i class="fa fa-random"></i></li>
                 </ul>
                 <div class="col-md-2" id="volumenDiv">
-                    <i class="fa fa-volume-up" id="volumenIco"></i>
+                    <i class="fa fa-volume-up" id="volumenIco" onclick="volumenOnOff()"></i>
                     <progress value="10" min="0" max="100" id="volumen" class="pull-right"></progress>
 
                 </div>
             </div>
             <div class="row" id="progessDiv">
                 <div class="col-md-1"></div>
-                <div class="col-md-1 text-right"><label id="progressTime">1:02</label></div>
+                <div class="col-md-1 text-right"><label id="progressTime"></label></div>
                 <div class="col-md-9">
                     <progress value="0" max="2000" id="barraProgreso"></progress>
                 </div>
-                <div class="col-md-1" id="songLength"><label id="duracion">*:**</label></div>
+                <div class="col-md-1" id="songLength"><label id="duracion"></label></div>
             </div>
             <div class="row" id="titCancionRepr">
                 <div class="col-md-2"></div>
-                <label id="titulo">***</label><label>&nbsp;-&nbsp;</label><label id="artista">***</label>
+                <label id="titulo">xxx</label><label>&nbsp;-&nbsp;</label><label id="artista">xxx</label>
             </div>
         </div>
         <div class="col-md-2" id="imgArtistadiv">
-            <img src="img/artista.jpg" id="imgArtista" class="pull-right">
+            <img id="imgArtista" class="pull-right">
         </div>
     </div>
 
@@ -84,7 +84,7 @@
                 <div class="col-md-1 col-xs-1"><strong>Duración</strong></div>
             </div>
             <ul id="playList">
-                <li class="fila0 row filaLista">
+                <li class="fila0 row filaLista" cover="img/artista.jpg" onmouseenter="pintarPLay(this)" onmouseleave="ocultarPlay(this)">
                     <div class="col-md-1 col-xs-1 filaPlayBoton"><i class="fa fa-play-circle"></i></div>
                     <div class="col-md-1 col-xs-1 filaFavBoton"><i class="fa fa-star-o"></i></div>
                     <div class="col-md-3 col-xs-3 filaNombreCancion" idCancion="a.mp3">Kaleidoscope</div>
