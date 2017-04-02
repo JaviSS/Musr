@@ -1,0 +1,32 @@
+
+-Insertar ususarios
+db.usuarios.insert({usuario:"usuario1",contrasena:"1234",id_playlist:"1"})
+db.usuarios.insert({usuario:"usuario2",contrasena:"1234",id_playlist:"2"})
+db.usuarios.insert({usuario:"usuario3",contrasena:"1234",id_playlist:"3"})
+db.usuarios.insert({
+	usuario:"usuario4",
+	contrasena:"1234",
+	id_playlist:"4"
+})
+
+
+-Insertar playlist
+db.playlists.insert({id_usuario:1,canciones:[1,2,3,4,5,6,7,8,9]})
+db.playlists.insert({id_usuario:2,canciones:[1,2,3,4,5,6,7,8,9]})
+db.playlists.insert({id_usuario:3,canciones:[1,2,3,4,5,6,7,8,9]})
+db.playlists.insert({
+	id_usuario:4,
+	canciones:[1,2,3,4,5,6,7,8,9]
+})
+
+
+
+-Insertar canciones
+db.canciones.insert({
+	id:1,titulo:"cancion1",
+	artista:"fdsf",
+	album:"dfs",
+	ano:2000,
+	duracion:3.20,
+	ref:"sdfsd"
+})
